@@ -28,9 +28,6 @@ export default async function Page() {
 
   const imageURL = page.data.main_image.url;
 
-  console.log(page);
-  console.log(imageURL);
-
   return (
     <div className={styles.main}>
       <GlitchHero>
@@ -41,7 +38,10 @@ export default async function Page() {
           <div className={styles.glitch__img} style={{backgroundImage: `url(${imageURL})`}}></div>
       </GlitchHero>
 
-      <SliceZone slices={page.data.slices} components={components} />
+      <div className={styles.content}>
+        <SliceZone slices={page.data.slices} components={components} />
+      </div>
+
       <ParticlesComponent />
     </div>
   );

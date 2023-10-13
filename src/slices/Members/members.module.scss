@@ -1,8 +1,74 @@
 .Members {
     z-index: 98 !important;
+    position: relative;
+    margin: 144px 0px;
+    align-self: flex-start;
+
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: left;
+    font-weight: 300;
     
     h1, h2, h3 {
-        font-family: var(--font-title);
         text-transform: uppercase;
+        font-family: 'Krona One', sans-serif;
+        letter-spacing: 2px;
+        font-size: 3vw!important;
+        margin-bottom: 24px;
+    }
+    
+    p {
+        margin: 16px 0;
+    }
+
+    .Grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 32px;
+
+        .Member {
+            text-align: left;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 800/1000;
+
+            img {
+                width: 100%;
+                height: auto;
+                opacity: 1;
+                transition: all 0.3s ease;
+            }
+
+            .Info {
+                border-left: 1px solid;
+                padding-left: 16px;
+                align-self: flex-end;
+                position: absolute;
+                bottom: -16px;
+                left: 16px;
+                padding-bottom: 24px;
+                transition: all 0.3s ease;
+                opacity: 0;
+
+                .Nom {
+                    font-family: 'Krona One', sans-serif;
+                    font-size: 16px;
+                }
+            }
+
+            &:hover {
+
+                img {
+                    opacity: 0.6;
+                }
+
+                .Info {
+                    bottom: 0px;
+                    opacity: 1;
+                }
+            }
+        }
     }
 }

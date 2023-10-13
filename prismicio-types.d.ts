@@ -156,6 +156,16 @@ export type AllDocumentTypes = HomeDocument | MemberDocument;
  */
 export interface MembersSliceDefaultPrimary {
   /**
+   * Anchor field in *Members → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: members.primary.anchor
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  anchor: prismic.KeyTextField;
+
+  /**
    * Title field in *Members → Primary*
    *
    * - **Field Type**: Rich Text
@@ -245,6 +255,16 @@ export type MembersSlice = prismic.SharedSlice<
  * Primary content in *RichText → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
+  /**
+   * Anchor field in *RichText → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rich_text.primary.anchor
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  anchor: prismic.KeyTextField;
+
   /**
    * Title field in *RichText → Primary*
    *

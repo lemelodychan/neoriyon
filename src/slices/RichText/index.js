@@ -15,6 +15,7 @@ const RichText = ({ slice }) => {
       className={styles.RichText}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id={slice.primary.anchor}
     >
       <PrismicRichText field={slice.primary.title} />
       <PrismicRichText field={slice.primary.text} />

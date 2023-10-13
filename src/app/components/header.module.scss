@@ -1,0 +1,57 @@
+.Header {
+    width: calc(100% - 64px);
+    text-align: left;
+    padding: 15px;
+    position: fixed;
+    top: 32px;
+    left: 32px;
+    z-index: 1000000!important;
+    mix-blend-mode: exclusion;
+    background-blend-mode: exclusion;
+
+    a {
+        text-transform: uppercase;
+        font-size: 14px;
+        margin: 0px 10px;
+        padding-bottom: 3px;
+        display: inline-block;
+        line-height: 40px;
+        vertical-align: top;
+        font-family: 'Krona One', sans-serif;
+        color: white;
+        mix-blend-mode: exclusion;
+        background-blend-mode: exclusion;
+    }
+
+    .Sns {
+        display: inline-block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+
+        a {
+            text-transform: uppercase;
+            font-size: 20px;
+            margin: 0px 10px;
+            padding-bottom: 3px;
+            display: inline-block;
+            line-height: 40px;
+            vertical-align: top;
+            font-family: 'Krona One', sans-serif;
+            color: white;
+            mix-blend-mode: exclusion;
+            background-blend-mode: exclusion;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Header {
+        text-align: center;
+
+        a:first-child {
+            display: block;
+            height: 34px;
+        }
+    }
+}
