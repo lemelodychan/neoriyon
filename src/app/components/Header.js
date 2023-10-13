@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <nav className={styles.Header}>
-        <a class="js-scrollTo" href="#top">
+        <a href="#top">
             <Image
                 src="/logo.png"
                 className={styles.Logo}
@@ -27,10 +27,10 @@ const Header = () => {
                 alt="NEORiYON logo"
             />
         </a>
-        <a class="js-scrollTo" href="#about">Profil</a>
-        <a class="js-scrollTo" href="#news">News</a>
-        <a class="js-scrollTo" href="#video">Vidéos</a>
-        <a class="js-scrollTo" href="#contact">Contact</a>
+        <a href="#about">Profil</a>
+        <a href="#news">News</a>
+        <a href="#video">Vidéos</a>
+        <a href="#contact">Contact</a>
 
         <div className={styles.Sns}>
             <a href="https://www.youtube.com/channel/UCnPD1QNHSa1876HPsfUizSA" target="_blank">

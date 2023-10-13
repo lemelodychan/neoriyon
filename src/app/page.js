@@ -3,7 +3,7 @@ import styles from './page.module.scss';
 import { SliceZone } from "@prismicio/react";
 
 import React from 'react';
-import ParticlesComponent from './components/Particles'; // Adjust the import path based on your project structure
+// import ParticlesComponent from './components/Particles';
 import GlitchHero from './components/GlitchHero';
 
 import { createClient } from "@/prismicio";
@@ -42,7 +42,7 @@ export default async function Page() {
         <SliceZone slices={page.data.slices} components={components} />
       </div>
 
-      <ParticlesComponent />
+      {/* <ParticlesComponent /> */}
     </div>
   );
 }

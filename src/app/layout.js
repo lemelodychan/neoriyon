@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="fr">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet" />
         
         <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=neoriyon"></script>
