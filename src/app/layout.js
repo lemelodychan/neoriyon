@@ -1,3 +1,6 @@
+import { PrismicPreview } from '@prismicio/next'
+import { repositoryName } from '@/prismicio'
+
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -10,8 +13,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="fr">
+      <head>
+        <script async defer src="https://static.cdn.prismic.io/prismic.js?new=true&repo=neoriyon"></script>
+      </head>
+      <body className={inter.className}>
+        {children}
+        <PrismicPreview repositoryName={repositoryName} />
+      </body>
     </html>
   )
 }

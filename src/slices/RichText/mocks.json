@@ -1,0 +1,42 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading1",
+									"content": {
+										"text": "Adjective"
+									}
+								}
+							]
+						}
+					],
+					[
+						"text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Dolor aliqua tempor magna id reprehenderit esse laborum enim pariatur nostrud exercitation. Ea pariatur velit qui duis cupidatat ipsum sint exercitation exercitation proident reprehenderit."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]
