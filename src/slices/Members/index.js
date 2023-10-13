@@ -6,10 +6,13 @@
 import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicNextLink } from "@prismicio/next";
+import '../../app/globals.css'
+import styles from './members.module.scss';
 
 const Members = ({ slice }) => {
   return (
     <section
+      className={styles.Members}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
