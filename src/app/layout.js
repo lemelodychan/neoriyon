@@ -24,7 +24,6 @@ export default function RootLayout({ children }) {
         <Header></Header>
         {children}
         <PrismicPreview repositoryName={repositoryName} />
-        <script src="particles.js"></script>
       </body>
     </html>
   )
