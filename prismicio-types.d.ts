@@ -4,12 +4,23 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = RichTextSlice;
+type HomeDocumentDataSlicesSlice = MembersSlice | RichTextSlice;
 
 /**
  * Content for Homepage documents
  */
 interface HomeDocumentData {
+  /**
+   * Main Image field in *Homepage*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.main_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
+
   /**
    * Slice Zone field in *Homepage*
    *
@@ -141,25 +152,115 @@ export type MemberDocument<Lang extends string = string> =
 export type AllDocumentTypes = HomeDocument | MemberDocument;
 
 /**
- * Primary content in *RichText → Items*
+ * Primary content in *Members → Primary*
  */
-export interface RichTextSliceDefaultItem {
+export interface MembersSliceDefaultPrimary {
   /**
-   * Title field in *RichText → Items*
+   * Title field in *Members → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: rich_text.items[].title
+   * - **API ID Path**: members.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Members → Items*
+ */
+export interface MembersSliceDefaultItem {
+  /**
+   * Photo field in *Members → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: members.items[].photo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  photo: prismic.ImageField<never>;
+
+  /**
+   * Name field in *Members → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: members.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Birthday field in *Members → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: members.items[].birthday
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  birthday: prismic.KeyTextField;
+
+  /**
+   * Color field in *Members → Items*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: members.items[].color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  color: prismic.ColorField;
+}
+
+/**
+ * Default variation for Members Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembersSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MembersSliceDefaultPrimary>,
+  Simplify<MembersSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Members*
+ */
+type MembersSliceVariation = MembersSliceDefault;
+
+/**
+ * Members Shared Slice
+ *
+ * - **API ID**: `members`
+ * - **Description**: Members
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MembersSlice = prismic.SharedSlice<
+  "members",
+  MembersSliceVariation
+>;
+
+/**
+ * Primary content in *RichText → Primary*
+ */
+export interface RichTextSliceDefaultPrimary {
+  /**
+   * Title field in *RichText → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: rich_text.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
 
   /**
-   * Text field in *RichText → Items*
+   * Text field in *RichText → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: rich_text.items[].text
+   * - **API ID Path**: rich_text.primary.text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
@@ -174,8 +275,8 @@ export interface RichTextSliceDefaultItem {
  */
 export type RichTextSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
-  Simplify<RichTextSliceDefaultItem>
+  Simplify<RichTextSliceDefaultPrimary>,
+  never
 >;
 
 /**
@@ -211,8 +312,13 @@ declare module "@prismicio/client" {
       MemberDocument,
       MemberDocumentData,
       AllDocumentTypes,
+      MembersSlice,
+      MembersSliceDefaultPrimary,
+      MembersSliceDefaultItem,
+      MembersSliceVariation,
+      MembersSliceDefault,
       RichTextSlice,
-      RichTextSliceDefaultItem,
+      RichTextSliceDefaultPrimary,
       RichTextSliceVariation,
       RichTextSliceDefault,
     };

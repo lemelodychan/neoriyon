@@ -13,11 +13,22 @@
           "placeholder": ""
         }
       },
+      "main_image": {
+        "type": "Image",
+        "config": {
+          "label": "Main Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "members": {
+              "type": "SharedSlice"
+            },
             "rich_text": {
               "type": "SharedSlice"
             }
